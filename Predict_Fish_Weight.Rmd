@@ -68,13 +68,13 @@ summary(modelpike)
 ### Best 2-varible prediction is
 
 ```{r}
-best2pike = lm(Weight ~ Height+Width, data = pike)
+best2pike = lm(Weight ~ Length1+Length3, data = pike)
 summary(best2pike)
 ```
 
 ### Best 2-varible equation
 
-Weight = -1423.97 + 0.0652 * Height + 0.5522 * Width
+Weight = -1675.79 + 0.04336 * Length1 +  0.00482 * Length3
 
 ### Best Models
 
@@ -96,14 +96,17 @@ summary(modelRoach)
 ### Best 2-varible prediction is
 
 ```{r}
-best2Roach = lm(Weight ~ Height+Width, data = Roach)
+best2Roach = lm(Weight ~ Length3+Width, data = Roach)
 summary(best2Roach)
 ```
 
 ### Best 2-varible equation
 
-Weight = -286.164 + 0.6581 * Height + 0.0162 * Width
+Weight = -319.118 + 0.282 * Length3 + 0.115 * Width
 
 ### Best Models
 
 ## Final Summary Statements
+
+The best model for perch prediction was Height + Width, for pike it was Length1 + Length3, and for roach was Length3 + Width.
+The best adjusted R-squares for each is, in descending order; Pike with 
