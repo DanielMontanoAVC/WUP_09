@@ -16,28 +16,75 @@ output:
 ```{r include=FALSE,echo=FALSE}
 require(tigerstats)
 require(tidyverse)
+library(leaps)
+library(dplyr)
+fish <- read.csv(file="Fish.csv",header = TRUE)
 ```
 
 # Predicting Fish Weight
 
+Find the best model using two variables to predict perch weight and compare this to the best overall model.
 
 ## Perch
+```{r}
+perch = filter(fish, Species == "Perch")
+```
+
+### Best Two regressor model
+
+```{r}
+modelperch <- regsubsets(Weight ~  Length1 + Length2 + Length3 + Height + Width ,data=perch, nvmax = )
+summary(modelperch)
+```
+
+### Best 2-varible prediction is
+
+```{r}
+best2perch = lm(Weight ~ Height+Width, data = perch)
+summary(best2perch)
+```
+
+## Best 2-varible equation
+
+Weight = -536 + 0.00112 * Height + 0.05309 * Width
 
 ### Best Models
 
-### Best Two regressor model
 
 
 ## Pike
 
-### Best Models
+```{r}
+pike = filter(fish, Species == "Pike")
+```
 
 ### Best Two regressor model
+
+```{r}
+modelpike <- regsubsets(Weight ~  Length1 + Length2 + Length3 + Height + Width ,data=pike, nvmax = )
+summary(modelpike)
+```
+
+### Best 2-varible prediction is
+
+```{r}
+best2pike = lm(Weight ~ Height+Width, data = pike)
+summary(best2pike)
+```
+
+### Best 2-varible equation
+
+Weight = -1423.97 + 0.0652 * Height + 0.5522 * Width
+
+### Best Models
+
+
 
 ## Roach
 
 ### Best Models
 
 ### Best Two regressor model
+
 
 ## Final Summary Statements
