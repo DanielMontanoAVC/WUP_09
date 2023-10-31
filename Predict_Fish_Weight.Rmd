@@ -109,4 +109,4 @@ Weight = -319.118 + 0.282 * Length3 + 0.115 * Width
 ## Final Summary Statements
 
 The best model for perch prediction was Height + Width, for pike it was Length1 + Length3, and for roach was Length3 + Width.
-The best adjusted R-squares for each is, in descending order; Pike with 
+The best adjusted R-squares for each is, in descending order; Pike with 0.9649, Perch with 0.94, and Roach with 0.8482
