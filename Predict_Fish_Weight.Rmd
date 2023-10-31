@@ -82,9 +82,28 @@ Weight = -1423.97 + 0.0652 * Height + 0.5522 * Width
 
 ## Roach
 
-### Best Models
+```{r}
+Roach = filter(fish, Species == "Roach")
+```
 
 ### Best Two regressor model
 
+```{r}
+modelRoach <- regsubsets(Weight ~  Length1 + Length2 + Length3 + Height + Width ,data=Roach, nvmax = )
+summary(modelRoach)
+```
+
+### Best 2-varible prediction is
+
+```{r}
+best2Roach = lm(Weight ~ Height+Width, data = Roach)
+summary(best2Roach)
+```
+
+### Best 2-varible equation
+
+Weight = -286.164 + 0.6581 * Height + 0.0162 * Width
+
+### Best Models
 
 ## Final Summary Statements
